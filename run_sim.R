@@ -13,7 +13,7 @@ f <- function(x) sin(3 * x)            # underlying function
 n <- 50                                # training sample size
 N <- 500                               # test sample size
 sigma <- 1                             # noise level
-B <- 1000                              # number of repetitions
+B <- 10000                             # number of repetitions
 
 # set the random seed for reproducibility
 set.seed(1)
