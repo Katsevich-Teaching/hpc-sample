@@ -1,0 +1,32 @@
+---
+title: "Training and test errors of natural spline fits"
+author: "Eugene Katsevich"
+output: pdf_document
+---
+
+```{r, message = FALSE}
+# load libraries
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+```
+
+Let us load the results into R:
+
+```{r}
+results <- readRDS("sim_results.rds")
+print(results, n = 3)
+```
+
+Next let us visualize the results:
+
+```{r, fig.width = 3.5, fig.height = 3, fig.align='center'}
+results |>
+  ggplot(aes(x = df)) + 
+  geom_point(aes(y = mean_train_error, color = "Training error")) +
+  geom_line(aes(y = mean_train_error, color = "Training error")) +
+  geom_point(aes(y = mean_test_error, color = "Test error")) +
+  geom_line(aes(y = mean_test_error, color = "Test error")) +
+  labs(x = "Degrees of freedom", y = "Mean-squared error") + 
+  theme(legend.title = element_blank(), legend.position = "bottom")
+```
