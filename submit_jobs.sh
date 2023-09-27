@@ -4,7 +4,7 @@
 #$ -j y                         # Merge standard output and standard error
 #$ -l h_rt=01:00:00             # Request 1 hour of runtime
 #$ -l h_vmem=1G                 # Request 1 GB of virtual memory per slot
-#$ -t 1-100                     # Specify the task range for the array job
+#$ -t 1-25                      # Specify the task range for the array job
 
 # load requisite modules
 module load R/4.3.1
