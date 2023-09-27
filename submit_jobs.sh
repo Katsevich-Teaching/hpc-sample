@@ -1,11 +1,11 @@
 #!/bin/bash
 
-#$ -N my_simulation             # Specify job name
-#$ -j y                         # Merge standard output and standard error
-#$ -o logs                      # Specify log directory
-#$ -l h_rt=01:00:00             # Request 1 hour of runtime
-#$ -l h_vmem=1G                 # Request 1 GB of virtual memory per slot
-#$ -t 1-25                      # Specify the task range for the array job
+#$ -N spline_simulation                   # Specify job name
+#$ -j y                                   # Merge standard output and standard error
+#$ -o logs/$JOB_NAME-$JOB_ID-$TASK_ID.log # Specify log file name
+#$ -l h_rt=01:00:00                       # Request 1 hour of runtime
+#$ -l h_vmem=1G                           # Request 1 GB of virtual memory per slot
+#$ -t 1-25                                # Specify the task range for the array job
 
 # load requisite modules
 module load R/4.3.1
